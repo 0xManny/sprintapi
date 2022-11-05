@@ -11,7 +11,6 @@ let data = {
     endTime: 0
 }
 let num_hackers = 0
-
 fs.readFile('abi.json', 'utf8', (err, abi) => {
     if (err) {
         console.log(err)
@@ -20,14 +19,14 @@ fs.readFile('abi.json', 'utf8', (err, abi) => {
 })
 
 async function updateHackers() {
-    while (true) {
-        let hacker
-        try {
-            hacker = await contract.hackers(num_hackers)
-            num_hackers += 1
-        } catch (err) {
-            break
-        }
+    try {
+        let event = contract.filters.registration()
+
+        let events = await contract.queryFilter(event);
+
+        let hackers = events.map((event) => event.args[0]);
+
+        for (const hacker of hackers) {
         let team = await contract.teams(hacker)
         if (!data.teamData[team]) {
             data.teamData[team] = []
@@ -36,7 +35,11 @@ async function updateHackers() {
             hacker: hacker,
             score: null
         })
+        }
+    } catch (err) {
+        
     }
+
 }
 
 async function updateScores() {
