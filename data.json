@@ -1,142 +1,113 @@
 {
     "teamData": {
-        "0": [
+        "A-Team": [
             {
-                "hacker": "0xC4c80378b5eaEa3C7A58273b75c956e20B41622F",
-                "score": 6
-            },
-            {
-                "hacker": "0xB65273ad19AC1a451BD7626febD38da355C6F03f",
-                "score": 3
-            }
-        ],
-        "1": [
-            {
-                "hacker": "0x9DbF71675709fD3E6FF8a74cAce034a800e6F32C",
-                "score": 6
-            }
-        ],
-        "2": [
-            {
-                "hacker": "0xF04CDA2E2233dcCdC1f3ec5410d302cF567F4B23",
-                "score": 21
-            },
-            {
-                "hacker": "0xA1174F6c66351A74fd615F3F0f67cAcc3F0d6aA9",
-                "score": 16
-            }
-        ],
-        "test team": [
-            {
-                "hacker": "0x0ecFedA7A5c642f2c42a2eD5501844Cf7F35dBAa",
+                "hacker": "0xA889e314D52a7729B163fB2775205040689BbC1C",
                 "score": 0
             }
         ]
     },
     "teamOrder": [
-        "2",
-        "0",
-        "1",
-        "test team"
+        "A-Team"
     ],
-    "totalWinningScore": 33,
+    "totalWinningScore": 0,
     "solves": [
         {
             "function": "f0",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f1",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f2",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f3",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f4",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f5",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f6",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f7",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f8",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f9",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f10",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f11",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f12",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f13",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f14",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f15",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f16",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f17",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f18",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f19",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f20",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f21",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f22",
-            "solves": 5
+            "solves": 0
         },
         {
             "function": "f23",
-            "solves": 5
+            "solves": 0
         }
     ],
-    "endTime": 1667772299
+    "endTime": 1667670756
 }

@@ -2,6 +2,7 @@ const ethers = require('ethers')
 const fs = require('fs')
 require('dotenv').config()
 
+const CONTRACT_ADDRESS = "0xA77400B73a65f8f691f9de246C383Aaa7ecbc9D3"
 let contract
 let data = {
     teamData: {},
@@ -19,25 +20,36 @@ fs.readFile('abi.json', 'utf8', (err, abi) => {
 })
 
 async function updateHackers() {
-    try {
-        let event = contract.filters.registration()
+    let event = contract.filters.registration()
 
-        let events = await contract.queryFilter(event);
-
-        let hackers = events.map((event) => event.args[0]);
-
-        for (const hacker of hackers) {
-        let team = await contract.teams(hacker)
+    let events = await contract.queryFilter(event);
+    let interface = new ethers.utils.Interface([
+        "event registration(address indexed teamAddr, string name)",
+    ]);
+    let hackers = events.map((event) => {
+        let parsed = interface.parseLog(event)
+        return parsed.args
+    });
+    
+    for (const hacker of hackers) {
+        let team = hacker[1]
+        let addr = hacker[0]
         if (!data.teamData[team]) {
             data.teamData[team] = []
         }
-        data.teamData[team].push({
-            hacker: hacker,
-            score: null
-        })
+        let found = false
+        for (const hacker2 of data.teamData[team]) {
+            if (addr == hacker2.hacker) {
+                found = true;
+                break
+            }
         }
-    } catch (err) {
-        
+        if (!found) {
+            data.teamData[team].push({
+                hacker: addr,
+                score: null
+            })
+        }
     }
 
 }
@@ -73,7 +85,7 @@ async function updateSolves() {
     let solves = []
     let count = 0
     while (count < 24) {
-        let val = 5 // await contract.solves(count)
+        let val = (await contract.solves(count)).toNumber()
         solves.push({
             function: `f${count}`,
             solves: val
@@ -89,7 +101,7 @@ function sleep(ms) {
 
 async function main(abi) {
     const provider = new ethers.providers.AlchemyProvider("goerli", process.env.API_KEY)
-    contract = new ethers.Contract(process.env.CONTRACT_ADDRESS,abi,provider)
+    contract = new ethers.Contract(CONTRACT_ADDRESS,abi,provider)
 
     while (true) {
         
@@ -108,9 +120,12 @@ async function main(abi) {
         }
         data['totalWinningScore'] = totalWinningScore
 
-        let startTime = 1667765099 // contract.startTime() // secs since epoch?
+        let startTime = (await contract.startTime()).toNumber() // secs since epoch?
+        if (!startTime) {
+            startTime = 1667669400
+        }
         let endTime = startTime + 60*60*2
-        let timeExtended = false // await contract.timeExtended()
+        let timeExtended = await contract.timeExtended()
         if (timeExtended) {
             endTime = startTime + 60*60*3
         }
