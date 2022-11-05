@@ -2,7 +2,7 @@ const ethers = require('ethers')
 const fs = require('fs')
 require('dotenv').config()
 
-const CONTRACT_ADDRESS = "0xA77400B73a65f8f691f9de246C383Aaa7ecbc9D3"
+const CONTRACT_ADDRESS = "0xc8612f5E2C8dd4bb4a4EbC4A58A045348f2BE9F8"
 let contract
 let data = {
     teamData: {},
