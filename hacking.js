@@ -7,7 +7,7 @@ let data = {
     teamData: {},
     teamOrder: [],
     totalWinningScore: 0,
-    solves: {},
+    solves: [],
     endTime: 0
 }
 let num_hackers = 0
@@ -67,11 +67,14 @@ function sortData() {
 }
 
 async function updateSolves() {
-    let solves = {}
+    let solves = []
     let count = 0
     while (count < 24) {
-        let val = 0 // await contract.solves(count)
-        solves[`f${count}`] += val
+        let val = 5 // await contract.solves(count)
+        solves.push({
+            function: `f${count}`,
+            solves: val
+        })
         count += 1
     }
     data.solves = solves

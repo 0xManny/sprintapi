@@ -40,31 +40,103 @@
         "test team"
     ],
     "totalWinningScore": 33,
-    "solves": {
-        "f0": null,
-        "f1": null,
-        "f2": null,
-        "f3": null,
-        "f4": null,
-        "f5": null,
-        "f6": null,
-        "f7": null,
-        "f8": null,
-        "f9": null,
-        "f10": null,
-        "f11": null,
-        "f12": null,
-        "f13": null,
-        "f14": null,
-        "f15": null,
-        "f16": null,
-        "f17": null,
-        "f18": null,
-        "f19": null,
-        "f20": null,
-        "f21": null,
-        "f22": null,
-        "f23": null
-    },
+    "solves": [
+        {
+            "function": "f0",
+            "solves": 5
+        },
+        {
+            "function": "f1",
+            "solves": 5
+        },
+        {
+            "function": "f2",
+            "solves": 5
+        },
+        {
+            "function": "f3",
+            "solves": 5
+        },
+        {
+            "function": "f4",
+            "solves": 5
+        },
+        {
+            "function": "f5",
+            "solves": 5
+        },
+        {
+            "function": "f6",
+            "solves": 5
+        },
+        {
+            "function": "f7",
+            "solves": 5
+        },
+        {
+            "function": "f8",
+            "solves": 5
+        },
+        {
+            "function": "f9",
+            "solves": 5
+        },
+        {
+            "function": "f10",
+            "solves": 5
+        },
+        {
+            "function": "f11",
+            "solves": 5
+        },
+        {
+            "function": "f12",
+            "solves": 5
+        },
+        {
+            "function": "f13",
+            "solves": 5
+        },
+        {
+            "function": "f14",
+            "solves": 5
+        },
+        {
+            "function": "f15",
+            "solves": 5
+        },
+        {
+            "function": "f16",
+            "solves": 5
+        },
+        {
+            "function": "f17",
+            "solves": 5
+        },
+        {
+            "function": "f18",
+            "solves": 5
+        },
+        {
+            "function": "f19",
+            "solves": 5
+        },
+        {
+            "function": "f20",
+            "solves": 5
+        },
+        {
+            "function": "f21",
+            "solves": 5
+        },
+        {
+            "function": "f22",
+            "solves": 5
+        },
+        {
+            "function": "f23",
+            "solves": 5
+        }
+    ],
     "endTime": 1667772299
 }
