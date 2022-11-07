@@ -4,7 +4,8 @@
   "description": "API for the Solidity Sprint Hackathon leaderboard ",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently --kill-others \"node hacking.js\" \"node index.js\""
+    "dev": "concurrently --kill-others \"node hacking.js\" \"node index.js\"",
+    "prod": "node index.js"
   },
   "author": "0xManny",
   "license": "ISC",
